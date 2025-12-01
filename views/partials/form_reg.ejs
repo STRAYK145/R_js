@@ -1,0 +1,32 @@
+<h1>Регистрация</h1>
+
+<div class="container d-flex justify-content-center align-items-center mb-4">
+  <form action="/auth/signup" method="POST" class="p-4 border rounded shadow bg-light" style="max-width: 600px; width: 100%;">
+    <div class="row g-3">
+      <div class="col-md-6">
+        <label for="username">Имя пользователя:</label>
+      </div>
+      <div class="col-md-6">
+        <input type="text" id="username" name="username" required>
+      </div>
+       <div class="col-md-6">
+        <label for="email">Почта:</label>
+      </div>
+      <div class="col-md-6">
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="col-md-6">
+        <label for="password">Пароль:</label>
+      </div>
+      <div class="col-md-6">
+        <input type="password" id="password" name="password" required>
+      </div>
+      <% for(var i=0; i<roles.length; i++) { %>
+        <input type="hidden" name="roles" value="<%=roles[i] %>" />
+        <% } %>
+      <div class="col-12 text-center">
+        <button type="submit" value="Зарегистрироваться" class="btn btn-dark px-5">Зарегистрироваться</button>
+      </div>
+    </div>
+  </form>
+</div>
