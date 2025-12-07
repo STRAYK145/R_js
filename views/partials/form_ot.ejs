@@ -1,0 +1,33 @@
+<h1>Оставить отзыв</h1>
+
+<div class="container d-flex justify-content-center align-items-center mb-4">
+  <form action="/ost/uploadPhoto" enctype="multipart/form-data" method="POST" class="p-4 border rounded shadow bg-light" style="max-width: 600px; width: 100%;">
+    <div class="row g-3">
+      <div class="col-md-6">
+        <input type="text" name="name" placeholder="Ваше имя" class="form-control" required>
+      </div>
+      <div class="col-md-6">
+        <input class="choose-file-btn" type="file" name="myImage" />
+      </div>
+      <div class="col-12">
+        <textarea name="text" placeholder="Текст отзыва" class="form-control" rows="4" required></textarea>
+      </div>
+      <div class="col-12 text-center">
+        <button type="submit" value="UploadPhoto" class="btn btn-dark px-5">Оставить отзыв</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="container d-flex justify-content-center align-items-center mb-4">
+  <form action="/ost/vPh" method="POST" class="p-4 border rounded shadow bg-light" style="max-width: 600px; width: 100%;">
+    <div class="row g-3">
+      <div class="col-12">
+        <input type="text" name="name" placeholder="ID фото" class="form-control" required>
+      </div>
+      <div class="col-12 text-center">
+        <button type="submit" value="UploadPhoto" class="btn btn-dark px-5">Вывести фото</button>
+      </div>
+    </div>
+  </form>
+</div>

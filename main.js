@@ -1,10 +1,12 @@
 const express = require('express');
 const app = express();
 const auth = require('./routes/auth.routes');
-app.use(express.urlencoded({ extended: false }))
+const fileUp = require('./routes/otziv.routes');
+app.use(express.urlencoded({ extended: true }))
 app.set('view engine', 'ejs');
 app.use(express.json())
 app.use("/auth", auth)
+app.use("/ost", fileUp);
 app.use(express.static('public'));
 
 app.get('/', function (req, res) {
