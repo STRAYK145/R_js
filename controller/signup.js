@@ -1,4 +1,5 @@
 const databaseConfig = require('../config/knexfile');
+const MailService = require("../service/service");
 //относительный путь к файлу настроек
 var knex = require('knex')(databaseConfig);
 const bcrypt = require('bcrypt');
@@ -59,6 +60,7 @@ exports.signup = (req, res) => {
                         roles_id: roleId
                     }))
                 );
+                MailService.sendTestMail(email,username);
                 res.status(200).send({ message: "Пользователь добавлен" });
             } catch (error) {
                 console.error(error);
